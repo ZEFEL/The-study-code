@@ -1,0 +1,8 @@
+#!/bin/csh -f
+bcmrgx <<EOF > log.bcmrgx.txt
+CUBE.P$1
+BOUN0.P$1
+BOUN.BOX.P$1
+BOUN.P$1
+EOF
+
