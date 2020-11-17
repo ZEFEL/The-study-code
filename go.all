@@ -1,0 +1,31 @@
+#!/bin/csh -f
+#
+# Scriptfile to make input files for 
+# computation  of flow around a cylinder by FFX
+#                               written by Y. Yamade
+#                                         2017.10.05
+#
+#
+######################################################
+#[1]
+echo "#[1] Make computational model"
+./go.mkcub2_partd
+echo "#[1] Done" ; echo
+#
+######################################################
+#[2]
+echo "#[2] Make geometry data"
+#./go.mkgeom
+echo "#[2] Done" ; echo
+#
+######################################################
+#[4]
+echo "#[3] Make intersect data"
+goall ./go.mkintr 1 20
+echo "#[3] Done" ; echo
+#
+######################################################
+#[4]
+echo "#[4] Merge b.c. files"
+goall ./go.bcmrgx 1 20
+echo "#[4] Done" ; echo

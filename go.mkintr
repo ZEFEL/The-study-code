@@ -1,0 +1,11 @@
+#!/bin/csh -f
+
+mkintr_input <<EOF > log.mkintr.P$1.txt
+./CUBE.P$1
+./GEOM_ESE
+./BOUN.BOX.P$1
+1.0
+10000000
+EOF
+touch fort.200
+/bin/mv -f fort.200 check.P$1.txt

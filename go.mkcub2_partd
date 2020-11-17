@@ -1,0 +1,43 @@
+#!/bin/csh -f
+(time mkcub2_partd ) <<EOF > & log.mkcub2_partd.txt
+20
+CUBE
+BOUN0
+200    #NCX
+200    #NCY
+1      #NCZ
+20     #NPART
+2      #FACE-01  :INLET :-X
+4      #FACE-02  :FREE  :+X
+1      #FACE-03  :WALL  :-Y 
+1      #FACE-04  :WALL  :+Y 
+1      #FACE-05  :WALL  :-Z
+1      #FACE-06  :WALL  :+Z
+1      #EDGE-07  :WALL  :-Y,-Z
+1      #EDGE-08  :WALL  :+Y,-Z
+1      #EDGE-09  :WALL  :+Y,+Z
+1      #EDGE-10  :WALL  :-Y,+Z
+2      #EDGE-11  :INLET :-X,-Z
+4      #EDGE-12  :FREE  :+X,-Z
+4      #EDGE-13  :FREE  :+X,+Z
+2      #EDGE-14  :INLET :-X,+Z
+1      #EDGE-15  :WALL  :-X,-Y
+1      #EDGE-16  :WALL  :+X,-Y
+1      #EDGE-17  :WALL  :+X,+Y
+1      #EDGE-18  :WALL  :-X,+Y
+1      #POINT-19 :WALL  :-X,-Y,-Z
+1      #POINT-20 :WALL  :+X,-Y,-Z
+1      #POINT-21 :WALL  :+X,+Y,-Z
+1      #POINT-22 :WALL  :-X,+Y,-Z
+1      #POINT-23 :WALL  :-X,-Y,+Z
+1      #POINT-24 :WALL  :+X,-Y,+Z
+1      #POINT-25 :WALL  :+X,+Y,+Z
+1      #POINT-26 :WALL  :-X,+Y,+Z
+3      #SET CYCLIC B.C. IN Z-DIR.
+EOF
+
+#TYPE
+#1: WALL
+#2: INLET
+#3: MOVING-WALL
+#4: FREE

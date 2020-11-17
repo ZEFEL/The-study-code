@@ -1,0 +1,10 @@
+#!/bin/csh -f
+mkgeom<<EOF > & log.mkgeom.txt
+2.0E-3
+GEOM
+1
+9.5 9.5 -0.01
+10.5 10.5  1.01
+EOF
+/bin/rm -f tmp_rec_xyz.dat
+
